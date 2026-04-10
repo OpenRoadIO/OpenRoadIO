@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/OR/', // MUST match your repo name with slashes
+  base: './', // Use relative path for HashRouter deployment
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
