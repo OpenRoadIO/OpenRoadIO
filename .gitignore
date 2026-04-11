@@ -21,3 +21,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+dist/
+.bolt/
+node_modules/
