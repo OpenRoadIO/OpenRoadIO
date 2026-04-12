@@ -11,6 +11,7 @@ import Models from './pages/Models';
 import Rachel from './pages/models/Rachel';
 import Inna from './pages/models/Inna';
 import Gigi from './pages/models/Gigi';
+import GTMVariableMapper from './pages/GTMVariableMapper';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/models" element={<Models />} />
             <Route path="/models/rachel-inna" element={<Rachel />} />
             <Route path="/models/gigi" element={<Gigi />} />
+            <Route path="/GTMVariableMapper" element={<GTMVariableMapper />} />
           </Routes>
         </main>
         <Footer />
