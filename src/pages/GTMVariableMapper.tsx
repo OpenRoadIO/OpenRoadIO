@@ -73,10 +73,10 @@ const GTMVariableMapperLanding: React.FC = () => {
         <section className="gtm-profile-section">
           <p className="gtm-created-by">Designed & Developed by</p>
           <h3 className="gtm-creator-name">Henri Singh</h3>
-          <p className="gtm-creator-title">Digital Implementation & Tracking Specialist</p>
+          <p className="gtm-creator-title">Implementation & Tracking Specialist</p>
           
           <a 
-            href="https://www.linkedin.com/in/YOUR-ID-HERE" 
+            href="https://www.linkedin.com/in/henri-singh-8a201813b/" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="gtm-linkedin-btn"
