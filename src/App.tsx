@@ -1,6 +1,11 @@
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+
+// -- Components --
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+
+// -- Main Website Pages --
 import Home from './pages/Home';
 import Clothing from './pages/Clothing';
 import Beauty from './pages/Beauty';
@@ -11,73 +16,56 @@ import Models from './pages/Models';
 import Rachel from './pages/models/Rachel';
 import Inna from './pages/models/Inna';
 import Gigi from './pages/models/Gigi';
-import GTMVariableMapper from './pages/GTMVariableMapper';
-import GTMDataPrivacy from './GTMDataPrivacy';
-import GTMDataPrivacy from "./pages/privacy";
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-// Import your new landing page
-import GTMVariableMapperLanding from './pages/GTMVariableMapper'; 
 
-// Create a wrapper component to handle the conditional logic
+// -- GTM Extension Pages --
+import GTMVariableMapper from './pages/GTMVariableMapper';
+import GTMDataPrivacy from "./pages/privacy"; 
+
+
+// 1. We create an inner component to handle the layout and URL checking
 const AppContent = () => {
   const location = useLocation();
   
-  // Define the exact path of your new landing page
-  // Change '/gtm-mapper' to whatever URL path you are actually using!
-  const isLandingPage = location.pathname === '/gtm-mapper';
+  // Check if the user is on the new GTM landing page
+  const isGTMLandingPage = location.pathname === '/GTMVariableMapper';
 
   return (
-    <>
-      {/* Only show Header if it is NOT the landing page */}
-      {!isLandingPage && <Header />}
+    <div className="min-h-screen flex flex-col">
       
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* Your extension landing page route */}
-        <Route path="/gtm-mapper" element={<GTMVariableMapperLanding />} />
-      </Routes>
+      {/* Hide Navbar ONLY on the GTM Landing Page */}
+      {!isGTMLandingPage && <Navbar />}
+      
+      <main className="flex-1">
+        <Routes>
+          {/* Your Original Routes */}
+          <Route path="/" element={<Home />} />
+          <Route path="/clothing" element={<Clothing />} />
+          <Route path="/beauty" element={<Beauty />} />
+          <Route path="/supplements" element={<Supplements />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/models" element={<Models />} />
+          <Route path="/models/rachel-inna" element={<Rachel />} />
+          <Route path="/models/gigi" element={<Gigi />} />
+          
+          {/* Your New GTM Routes */}
+          <Route path="/GTMVariableMapper" element={<GTMVariableMapper />} />
+          <Route path="/GTMVariableMapper/privacy" element={<GTMDataPrivacy />} />
+        </Routes>
+      </main>
 
-      {/* Only show Footer if it is NOT the landing page */}
-      {!isLandingPage && <Footer />}
-    </>
+      {/* Hide Footer ONLY on the GTM Landing Page */}
+      {!isGTMLandingPage && <Footer />}
+      
+    </div>
   );
 };
 
-const App = () => {
-  return (
-    <Router>
-      <AppContent />
-    </Router>
-  );
-};
-
-export default App;
+// 2. The main App wraps everything in your HashRouter
 function App() {
   return (
     <HashRouter>
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/clothing" element={<Clothing />} />
-            <Route path="/beauty" element={<Beauty />} />
-            <Route path="/supplements" element={<Supplements />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/models" element={<Models />} />
-            <Route path="/models/rachel-inna" element={<Rachel />} />
-            <Route path="/models/gigi" element={<Gigi />} />
-            <Route path="/GTMVariableMapper" element={<GTMVariableMapper />} />
-            <Route path="/GTMVariableMapper/privacy" element={<GTMDataPrivacy />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <AppContent />
     </HashRouter>
   );
 }
