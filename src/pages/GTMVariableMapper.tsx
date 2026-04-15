@@ -32,16 +32,10 @@ const GTMVariableMapperLanding: React.FC = () => {
         <section className="gtm-showcase">
           <div className="gtm-screenshot-card">
             <img src="/OR/mapper-ui.png" className="gtm-real-screenshot" alt="Mapper UI" />
-            <div className="gtm-screenshot-placeholder">
-              <span>App Interface Screenshot</span>
-            </div>
-          </div>
+                   </div>
           <div className="gtm-screenshot-card offset-card">
             <img src="/OR/mapper-ui-pro.png" className="gtm-real-screenshot" alt="Pro UI" />
-            <div className="gtm-screenshot-placeholder">
-              <span>Pro License UI Screenshot</span>
-            </div>
-          </div>
+                 </div>
         </section>
 
         {/* --- FEATURES GRID --- */}
