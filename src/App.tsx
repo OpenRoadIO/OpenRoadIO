@@ -14,6 +14,48 @@ import Gigi from './pages/models/Gigi';
 import GTMVariableMapper from './pages/GTMVariableMapper';
 import GTMDataPrivacy from './GTMDataPrivacy';
 import GTMDataPrivacy from "./pages/privacy";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+// Import your new landing page
+import GTMVariableMapperLanding from './pages/GTMVariableMapper'; 
+
+// Create a wrapper component to handle the conditional logic
+const AppContent = () => {
+  const location = useLocation();
+  
+  // Define the exact path of your new landing page
+  // Change '/gtm-mapper' to whatever URL path you are actually using!
+  const isLandingPage = location.pathname === '/gtm-mapper';
+
+  return (
+    <>
+      {/* Only show Header if it is NOT the landing page */}
+      {!isLandingPage && <Header />}
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* Your extension landing page route */}
+        <Route path="/gtm-mapper" element={<GTMVariableMapperLanding />} />
+      </Routes>
+
+      {/* Only show Footer if it is NOT the landing page */}
+      {!isLandingPage && <Footer />}
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+};
+
+export default App;
 function App() {
   return (
     <HashRouter>
