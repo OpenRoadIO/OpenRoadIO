@@ -21,8 +21,9 @@
   margin-top: 0;
 }
 
+/* THE BLUE ACCENT COLOR */
 .gtm-accent {
-  color: #ff0000;
+  color: #2563eb; 
 }
 
 .gtm-landing-wrapper p {
@@ -54,7 +55,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 20px;
-  color: #ff0000;
+  color: #2563eb; /* Blue */
 }
 
 /* --- MEDIA PLACEHOLDERS --- */
@@ -92,7 +93,6 @@
   aspect-ratio: 4 / 3;
 }
 
-/* Real Images/Video */
 .gtm-real-screenshot, 
 .gtm-real-video {
   width: 100%;
@@ -105,7 +105,7 @@
 /* --- DESCRIPTION SECTION --- */
 .gtm-description-box {
   background: #151515;
-  border-left: 4px solid #ff0000;
+  border-left: 4px solid #2563eb; /* Blue border */
   padding: 30px;
   border-radius: 4px;
   margin-bottom: 50px;
@@ -130,7 +130,7 @@
 
 .gtm-feature-list li::before {
   content: '✓';
-  color: #ff0000;
+  color: #2563eb; /* Blue checkmarks */
   position: absolute;
   left: 0;
   font-weight: bold;
@@ -157,7 +157,7 @@
 
 .gtm-linkedin-btn {
   display: inline-block;
-  background-color: #0077b5;
+  background-color: #2563eb; /* Blue button */
   color: white;
   text-decoration: none;
   padding: 12px 24px;
@@ -168,6 +168,6 @@
 }
 
 .gtm-linkedin-btn:hover {
-  background-color: #005582;
+  background-color: #1d4ed8; /* Darker blue on hover */
   color: white;
 }
