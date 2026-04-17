@@ -27,7 +27,7 @@ const AppContent = () => {
   const location = useLocation();
   
   // Check if the user is on the new GTM landing page
-  const isGTMLandingPage = location.pathname === '/GTMVariableMapper';
+ const isGTMLandingPage = location.pathname.startsWith('/GTMVariableMapper');
 
   return (
     <div className="min-h-screen flex flex-col">
