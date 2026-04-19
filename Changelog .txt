@@ -32,4 +32,14 @@ Asset Pathing: Corrected image import methodology (utilizing src/assets/ instead
 📝 Documentation & Legal
 Privacy Policy Implementation: Authored and deployed a comprehensive Privacy Policy specifically detailing local storage usage, data retention, and Lemon Squeezy API validation to meet Chrome Developer Program requirements.
 
+🔄 Routing Updates
+Root Redirection: Temporarily suspended the main OpenRoadIO homepage (<Home />). Visitors hitting the root URL (/ or /OR/) are now instantly and forcefully routed to the React-based Privacy Policy page (/GTMVariableMapper/privacy).
+
+React Router Integration: Implemented the redirect natively using React Router's <Navigate replace /> component inside App.tsx. This ensures the redirect executes flawlessly within the Single Page Application environment without requiring a hard browser refresh.
+
+Cleanup: Removed the experimental JavaScript redirect from the <head> of index.html to prevent conflicting redirect loops and bypass browser caching issues.
+
+⏪ Restoration Plan (Post-Approval)
+The original <Home /> route component was preserved and commented out in App.tsx. Once the Chrome Web Store reviewer approves the extension, restoring the main website is as simple as deleting the <Navigate> line and uncommenting the original home route.
+
 Design Consistency: Styled the React-based Privacy Policy page to perfectly match the premium branding of the main landing page, complete with blue accent lines and matching typography.
