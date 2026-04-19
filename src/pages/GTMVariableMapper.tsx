@@ -20,7 +20,7 @@ const GTMVariableMapperLanding: React.FC = () => {
           
           <div className="gtm-cta-container">
             {/* Replace href with your actual Chrome Store Link once published */}
-            <a href="#" className="gtm-btn-primary">
+            <a href="https://chromewebstore.google.com/detail/gtm-variable-mapper/hkjfbecfppnjhggnmdhmkbjkjdjigkni" className="gtm-btn-primary">
               <svg viewBox="0 0 24 24" fill="currentColor" className="gtm-chrome-icon">
                 <path d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm0 18A8.253 8.253 0 013.75 12c0-1.28.293-2.492.813-3.571l3.529 6.11A5.253 5.253 0 0012 17.25c1.472 0 2.8-.605 3.756-1.583L12 20.25zM17.25 12a5.25 5.25 0 00-5.25-5.25c-1.42 0-2.707.561-3.66 1.474l-2.613-4.526A8.217 8.217 0 0112 3.75c3.84 0 7.07 2.635 8.019 6.223l-5.69 3.284A5.228 5.228 0 0017.25 12zm-5.25 3.75a3.75 3.75 0 110-7.5 3.75 3.75 0 010 7.5z" />
               </svg>
