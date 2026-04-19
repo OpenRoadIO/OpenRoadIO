@@ -1,0 +1,33 @@
+Changelog: GTM Variable Mapper & OpenRoadIO Deployment
+Date: April 19, 2026
+Environment: Production (/OR/ Repository)
+
+✨ New Features & Architecture
+Clean URL Routing: Transitioned the site architecture from HashRouter to BrowserRouter, eliminating hashtags from all URLs for a cleaner, modern web experience.
+
+GitHub Pages SPA Support: Deployed a custom 404.html interceptor and an index.html decoding script to natively support Single Page Application routing on static GitHub Pages hosting.
+
+Chrome Web Store Compliance: Engineered a static privacy.html bypass file. This provides a direct, non-JavaScript fallback specifically designed to pass the automated Chrome Web Store validation bot while preserving the stylized React experience for human visitors.
+
+🎨 UI/UX Enhancements
+Premium Landing Page Overhaul: Redesigned the GTM Variable Mapper landing page with a modern dark-mode aesthetic, featuring glassmorphism feature cards, dynamic hover states, and subtle radial gradient backgrounds.
+
+Chrome Store Integration: Added a prominent, styled call-to-action button featuring an integrated Chrome SVG icon to drive extension downloads.
+
+Seamless Legal Navigation: Integrated a minimalist footer block and dedicated back buttons to ensure fluid navigation between the main extension page and the privacy documentation.
+
+🐛 Bug Fixes & Stability
+Deep-Link Refresh Resolution: Fixed a critical issue causing blank white screens upon refreshing nested URLs (e.g., /GTMVariableMapper/privacy). The vite.config.ts base path is now explicitly hardcoded to /OR/ to ensure absolute asset resolution.
+
+Build Pipeline Restoration: Resolved multiple Vite production build failures:
+
+Cleaned up duplicate function declarations and conflicting router imports in App.tsx.
+
+Fixed an unclosed @media block in GTMVariableMapper.css that was halting CSS compilation.
+
+Asset Pathing: Corrected image import methodology (utilizing src/assets/ instead of public/) to prevent broken image links during production builds.
+
+📝 Documentation & Legal
+Privacy Policy Implementation: Authored and deployed a comprehensive Privacy Policy specifically detailing local storage usage, data retention, and Lemon Squeezy API validation to meet Chrome Developer Program requirements.
+
+Design Consistency: Styled the React-based Privacy Policy page to perfectly match the premium branding of the main landing page, complete with blue accent lines and matching typography.
